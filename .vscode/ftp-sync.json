@@ -1,0 +1,16 @@
+{
+    "remotePath": "./httpdocs/etracking/",
+    "host": "ftp.072serv.com",
+    "username": "072ser",
+    "password": "q4gJ!908M$",
+    "port": 21,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git"
+    ]
+}
