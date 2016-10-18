@@ -24,7 +24,7 @@ class Wepapp extends CI_Controller {
 	public function test()
 	{
 		//$this->load->view('welcome_message');
-		$this->load->model('mTestapp','mTestapp');
+		$this->load->model('Webapp2','mTestapp');
 			echo json_encode ( $this->mTestapp->testmoldel());
 
 	}
@@ -33,6 +33,26 @@ class Wepapp extends CI_Controller {
 		//$this->load->view('welcome_message');
 		$this->load->model('webapp','mTestapp');
 			$text = $_POST['EMPCODE'];
+			$PageNumber = $_POST['PageNumber'];
+			$RowspPage = $_POST['RowspPage'];
+			$res = $this->mTestapp->COUNT($text);
+            $array = json_decode(json_encode($res), true);
+            $totalrows =  $array[0]['computed'];
+            //echo json_encode ($array);
+			$totalPage = ceil( $totalrows/$RowspPage );
+			$res2 = $this->mTestapp->get_EMPCODE($PageNumber,$RowspPage,$text);
+			$res3['totalPage'] = $totalPage;
+			$res3['totalrows'] = $totalrows;
+			$res3['data'] = $res2;
+        echo json_encode ( $res3); 
+           
+
+	}
+	  	public function test3()
+	{
+		//$this->load->view('welcome_message');
+		$this->load->model('webapp2','mTestapp');
+			$text = $_POST['DOCNO'];
 			$PageNumber = $_POST['PageNumber'];
 			$RowspPage = $_POST['RowspPage'];
 			$res = $this->mTestapp->COUNT($text);

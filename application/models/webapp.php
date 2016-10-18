@@ -10,7 +10,7 @@ class Webapp extends CI_Model {
     }
  function testmoldel()
  {
-$qry = $this->db2->query("SELECT * FROM SMEMPL");
+$qry = $this->db2->query("SELECT * FROM SFBOOK");
 return $qry->result();
 //return '5555';
  }
