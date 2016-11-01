@@ -292,9 +292,10 @@ public function edit_data()
 	}
 public function get_detial()
 	{
-		$key = $_POST['key'];
-		$value = $_POST['value'];
-		$table = $_POST['table'];
+		$post = json_decode(file_get_contents('php://input'), true);
+		$key = $post['key'];
+		$value = $post['value'];
+		$table = $post['table'];
 		//$key = 'DOCNO';
 		//$value = 'atest0001';
 		//$table = "SFBOOK";
